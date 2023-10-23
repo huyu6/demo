@@ -1,0 +1,27 @@
+# Tomcat
+server:
+  port: 9204
+# Spring
+spring:
+  application:
+    # 应用名称
+    name: ruoyi-file
+  profiles:
+    # 环境配置
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        # 服务注册地址
+        server-addr: 192.168.229.132:8848
+        username: nacos
+        password: nacos
+      config:
+        # 配置中心地址
+        server-addr: 192.168.229.132:8848
+        username: nacos
+        password: nacos
+        # 共享配置
+        shared-configs:
+          - application-ruoyi-${spring.profiles.active}.yml
+          - file-ruoyi-${spring.profiles.active}.yml

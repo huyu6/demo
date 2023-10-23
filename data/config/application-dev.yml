@@ -1,0 +1,50 @@
+spring:
+  data:
+    redis:
+      host: 192.168.229.132
+      port: 6379
+      password: 123456
+      database: 1
+      # 读超时
+      timeout: 3000
+      # 连接超时
+      connectTimeout: 5000
+      # Lettuce连接池
+      lettuce:
+        pool:
+          # 最小空闲连接
+          min-idle: 5
+          # 最大空闲连接
+          max-idle: 10
+          # 最大连接数
+          max-active: 100
+          # 连接分配应该阻塞的最大时间
+          max-wait: 2000
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+# feign 配置
+feign:
+  sentinel:
+    enabled: true
+  okhttp:
+    enabled: true
+  httpclient:
+    enabled: false
+  client:
+    config:
+      default:
+        connectTimeout: 10000
+        readTimeout: 10000
+  compression:
+    request:
+      enabled: true
+    response:
+      enabled: true
+
+# 暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

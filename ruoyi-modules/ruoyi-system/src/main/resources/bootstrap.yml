@@ -1,0 +1,37 @@
+# Tomcat
+server:
+  port: 9201
+# Spring
+spring:
+  application:
+    # 应用名称
+    name: ruoyi-system
+  profiles:
+    # 环境配置
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        # 服务注册地址
+        server-addr: 192.168.229.132:8848
+        username: nacos
+        password: nacos
+      config:
+        # 配置中心地址
+        server-addr: 192.168.229.132:8848
+        username: nacos
+        password: nacos
+        # 配置文件格式
+        file-extension: yml
+        shared-configs:
+          - application-ruoyi3-${spring.profiles.active}.yml
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.229.132:3306/ry-cloud?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    username: root
+    password: HU+2018+yu
+mybatis:
+  # 搜索指定包别名
+  typeAliasesPackage: com.ruoyi.system
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件
+  mapperLocations: classpath:mapper/**/*.xml
