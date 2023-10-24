@@ -7,18 +7,10 @@ spring:
         loginPassword: 123456
     dynamic:
       druid:
-        initial-size: 5
+        initial-size: 2
         min-idle: 5
-        maxActive: 20
-        maxWait: 60000
-        timeBetweenEvictionRunsMillis: 60000
-        minEvictableIdleTimeMillis: 300000
-        validationQuery: SELECT 1 FROM DUAL
+        maxActive: 10
         testWhileIdle: true
-        testOnBorrow: false
-        testOnReturn: false
-        poolPreparedStatements: true
-        maxPoolPreparedStatementPerConnectionSize: 20
         filters: stat,slf4j
       datasource:
         # 主库数据源
