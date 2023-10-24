@@ -76,13 +76,13 @@ com.ruoyi
 - 方式二：在nacos中添加配置文件,文件见data,在对应模块shared-configs中增加配置
 
 6、打开运行基础模块（启动没有先后顺序）
-RuoYiGatewayApplication （网关模块 必须）
-RuoYiAuthApplication （认证模块 必须）
-RuoYiSystemApplication （系统模块 必须）
-RuoYiMonitorApplication （监控中心 可选）
-RuoYiGenApplication （代码生成 可选）
-RuoYiJobApplication （定时任务 可选）
-RuoYFileApplication （文件服务 可选）
+- RuoYiGatewayApplication （网关模块 必须）
+- RuoYiAuthApplication （认证模块 必须）
+- RuoYiSystemApplication （系统模块 必须）
+- RuoYiMonitorApplication （监控中心 可选）
+- RuoYiGenApplication （代码生成 可选）
+- RuoYiJobApplication （定时任务 可选）
+- RuoYFileApplication （文件服务 可选）
 7、集成seata分布式事务（可选配置，默认不启用）
 创建数据库ry-seata并导入数据脚本ry_seata_2021xxxx.sql
 
