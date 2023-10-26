@@ -26,3 +26,5 @@ spring:
         # 共享配置
         shared-configs:
           - application-ruoyi3-${spring.profiles.active}.yml
+springdoc:
+  packagesToScan: com.ruoyi.auth.controller

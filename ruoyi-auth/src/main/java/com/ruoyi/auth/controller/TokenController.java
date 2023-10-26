@@ -1,5 +1,7 @@
 package com.ruoyi.auth.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,6 +24,7 @@ import com.ruoyi.system.api.model.LoginUser;
  * 
  * @author ruoyi
  */
+@Tag(name = "token 控制")
 @RestController
 public class TokenController
 {
@@ -31,6 +34,7 @@ public class TokenController
     @Autowired
     private SysLoginService sysLoginService;
 
+    @Operation(description = "用户登录")
     @PostMapping("login")
     public R<?> login(@RequestBody LoginBody form)
     {
@@ -39,7 +43,7 @@ public class TokenController
         // 获取登录token
         return R.ok(tokenService.createToken(userInfo));
     }
-
+    @Operation(description = "用户登出")
     @DeleteMapping("logout")
     public R<?> logout(HttpServletRequest request)
     {
@@ -54,7 +58,7 @@ public class TokenController
         }
         return R.ok();
     }
-
+    @Operation(description = "刷新令牌有效期")
     @PostMapping("refresh")
     public R<?> refresh(HttpServletRequest request)
     {
@@ -67,7 +71,7 @@ public class TokenController
         }
         return R.ok();
     }
-
+    @Operation(description = "用户注册")
     @PostMapping("register")
     public R<?> register(@RequestBody RegisterBody registerBody)
     {

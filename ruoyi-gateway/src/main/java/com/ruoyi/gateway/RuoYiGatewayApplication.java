@@ -1,8 +1,16 @@
 package com.ruoyi.gateway;
 
+import org.springdoc.core.models.GroupedOpenApi;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.cloud.gateway.route.RouteDefinition;
+import org.springframework.cloud.gateway.route.RouteDefinitionLocator;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Lazy;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 网关启动程序
@@ -26,4 +34,5 @@ public class RuoYiGatewayApplication
                 " |  |  \\    /  \\      /           \n" +
                 " ''-'   `'-'    `-..-'              ");
     }
+
 }
